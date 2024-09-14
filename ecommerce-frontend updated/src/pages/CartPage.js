@@ -60,7 +60,6 @@ function CartPage() {
         navigate('/login');
       }
       setLoading(false);
-      console.log(cartId);
       try {
         const url = `http://localhost:5120/api/CartItem/${cartId}`;
 
@@ -88,7 +87,7 @@ function CartPage() {
       }
     };
     fetchCartItems();
-  }, cartId);
+  }, [cartId]);
 
 
   const handleCheckboxChange = (productId) => {
@@ -117,6 +116,18 @@ function CartPage() {
       0
     );
   };
+
+
+  const handleBuyNow = () => {
+    const amt = getTotalAmount();
+    navigate('/orderdetail', { state: { fromcart: 1, selectedProducts: cartItems, amount: amt } });
+  }
+
+  const handleBuyNowSelected = () => {
+    const amt = calculateSelectedTotal();
+    const selprods = cartItems.filter(item => selectedItems[item.cartItemId]);
+    navigate('/orderdetail', { state: { fromcart: 3, selectedProducts: selprods, amount: amt } });
+  }
 
   return (
     <div>
@@ -166,13 +177,13 @@ function CartPage() {
               <div className="cart-totals">
                 <button
                   className="buy-now-button"
-                  onClick={() => navigate('/payment-page', { state: { amount: getTotalAmount() } })}
+                  onClick={() => handleBuyNow()}
                 >
                   Buy Now - Total Amount: ₹{getTotalAmount()}
                 </button>
                 <button
                   className="buy-now-button"
-                  onClick={() => navigate('/payment-page', { state: { amount: calculateSelectedTotal() } })}
+                  onClick={() => handleBuyNowSelected()}
                 >
                   Buy Now - Selected Amount: ₹{calculateSelectedTotal()}
                 </button>

@@ -16,7 +16,6 @@ import WishlistPage from './pages/WishlistPage';
 import AddressPage from './pages/AddressPage';
 import Navbar from './pages/Navbar';
 import ChatBot from './pages/ChatBot';
-import order from './pages/OrderDetails'
 import OrderDetailsPage from './pages/OrderDetails';
 
 
@@ -27,84 +26,91 @@ function AppRoutes() {
     <UserProvider>
       <CartProvider>
         <Router>
+
           <Routes>
-            <Route path="/login" element={<LoginPage />} />
-          </Routes>
-        </Router>
-        <Router>
-          <div>
-            <Navbar />
-          </div>
-          <Routes>
-            <Route path="/" element={<HomePage />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/register" element={<RegisterPage />} />
-
-            <Route path="/address" element={<AddressPage />} />
-
-
+            <Route path="/" element={<div> <Navbar /><HomePage /> </div>} />
+            <Route
+              path="/address"
+              element={
+                <div>
+                  <Navbar />
+                  <AddressPage />
+                </div>} />
             <Route
               path="/category/electronics"
               element={
-                <Layout>
+                <div>
+                  <Navbar />
                   <ElectronicsPage />
-                </Layout>
+                </div>
               }
             />
 
             <Route
-              path="/order-page"
+              path="/myorders"
               element={
-                <Layout>
+                <div>
+                  <Navbar />
                   <OrdersPage />
-                </Layout>
+                </div>
               }
             />
-            <Route
+            {/* <Route
               path="/payment-page"
               element={
-                <Layout>
+                <div><Navbar />
                   <PaymentPage />
-                </Layout>
+                </div>
               }
-            />
+            /> */}
             <Route
               path="/cart"
               element={
-                <Layout>
+                <div>
+                  <Navbar />
                   <CartPage />
-                </Layout>
+                </div>
               }
             />
 
             <Route
               path="/user"
               element={
-                <Layout>
+                <div>
+                  <Navbar />
                   <UserPage />
-                </Layout>
+                </div>
               }
             />
 
             <Route
               path="/wishlist"
               element={
-                <Layout>
+                <div>
+                  <Navbar />
                   <WishlistPage />
-                </Layout>
+                </div>
               }
             />
 
             <Route
+              path="/chatbot"
+              element={
+                <div>
+                  <Navbar />
+                  <ChatBot />
+                </div>} />
+            <Route
               path="/orderdetail"
               element={
-                <Layout>
-                  <OrderDetailsPage/>
-                </Layout>
+                <div>
+                  <Navbar />
+                  <OrderDetailsPage />
+                </div>
               }
             />
-
-            <Route path="/chatbot" element={<ChatBot />} />
 
           </Routes>
         </Router>

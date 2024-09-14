@@ -1,3 +1,83 @@
+/* .payment-page {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.payment-page h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.payment-methods {
+  margin-bottom: 20px;
+}
+
+.payment-option {
+  margin-bottom: 15px;
+}
+
+.payment-option input[type="radio"] {
+  margin-right: 10px;
+}
+
+.payment-option label {
+  font-size: 18px;
+  color: #555;
+}
+
+.payment-option input[type="text"] {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.payment-option input[type="text"]::placeholder {
+  color: #888;
+}
+
+.card-details {
+  margin-top: 10px;
+}
+
+.card-details input {
+  margin-bottom: 10px;
+}
+
+.pay-now-button {
+  display: inline-block;
+  padding: 12px 20px;
+  font-size: 18px;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.pay-now-button:hover {
+  background-color: #0056b3;
+}
+
+.pay-now-button:disabled {
+  background-color: #ddd;
+  cursor: not-allowed;
+}
+
+ */
+
+
+ /* Apply styles only to elements inside the .payment-page */
+/* Apply these styles only inside the PaymentPage component */
+/* Apply these styles only inside the PaymentPage component */
 .payment-page-container {
   margin: 0;
   height: 100vh;
@@ -112,3 +192,14 @@
   box-shadow: none;
 }
 
+/* Media Queries for Mobile */
+@media (max-width: 600px) {
+  .payment-page {
+    padding: 30px;
+    width: 90%;
+  }
+
+  .payment-page .pay-now-button {
+    font-size: 18px;
+  }
+}

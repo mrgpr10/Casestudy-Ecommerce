@@ -49,7 +49,7 @@
 //   }, [CategoryData]);
 
 //   const navigate = useNavigate();
- 
+
 
 //   return (
 //     <div className="categories-container">
@@ -230,7 +230,6 @@ const Categories = () => {
             <div className="subcategory-dropdown">
               {category.subcategories.map((subcat, idx) => (
                 <Link
-                  to={`/${category.name.toLowerCase().replace(/ & /g, '-').replace(/ /g, '-')}/${subcat.toLowerCase().replace(/ /g, '-')}`}
                   key={idx}
                   className="subcategory-item"
                 >

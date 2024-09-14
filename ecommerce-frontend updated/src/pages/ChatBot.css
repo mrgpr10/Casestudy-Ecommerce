@@ -189,6 +189,7 @@ body {
         transform: translateX(-20px);
         opacity: 0;
     }
+
     to {
         transform: translateX(0);
         opacity: 1;
@@ -200,6 +201,7 @@ body {
         transform: translateX(20px);
         opacity: 0;
     }
+
     to {
         transform: translateX(0);
         opacity: 1;
@@ -243,14 +245,16 @@ body {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
-.options-container, .categories-container {
+.options-container,
+.categories-container {
     display: flex;
     flex-wrap: wrap;
     gap: 15px;
     margin-top: 15px;
 }
 
-.option-button, .category-button {
+.option-button,
+.category-button {
     padding: 12px 18px;
     border: none;
     border-radius: 25px;
@@ -262,7 +266,8 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.option-button:hover, .category-button:hover {
+.option-button:hover,
+.category-button:hover {
     background: linear-gradient(135deg, #0056b3, #003d7a);
     transform: scale(1.05);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);

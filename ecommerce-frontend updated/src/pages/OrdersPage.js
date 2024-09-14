@@ -1,110 +1,65 @@
-// import React, { useContext } from 'react';
+
+import React, { useState, useContext, useEffect } from 'react';
 // import { CartContext } from '../context/CartContext';
-// import { Link } from 'react-router-dom';
-// import    { useEffect } from 'react';
-// import './OrdersPage.css'; 
-
-
-
-
-
-// function OrdersPage() {
-//   const { orders } = useContext(CartContext);
-
-
-
-
-// //products array in  orders object is empty, which is why we are not seeing any product details in the OrdersPage
-
-//   useEffect(() => {
-//     console.log('Orders:', orders);
-//     if (orders.length > 0) {
-//       console.log('First Order:', orders[0]);
-//       console.log('Products in First Order:', orders[0].products);
-//     }
-//   }, [orders]);
-
-//   if (!orders || orders.length === 0) {
-//     return (
-//       <div className="orders-container">
-//         <h2 className="page-title">Orders</h2>
-//         <p className="no-orders-message">You have no orders yet. Check back later!</p>
-//       </div>
-//     );
-//   }
-
-//   return (
-//     <div className="orders-container">
-//       <h2 className="page-title">Order History</h2>
-
-
-
-//       <table className="orders-table">
-//         <thead>
-//           <tr>
-//             <th>Order ID</th>
-//             <th>Products</th>
-//             <th>Quantity</th>
-//             <th>Total Price</th>
-//             <th>Payment Method</th>
-//             <th>Status</th>
-//             <th>Actions</th>
-//           </tr>
-//         </thead>
-
-
-//         <tbody>
-//           {orders.map(order => (
-//             <tr key={order.id}>
-//               <td>{order.id}</td>
-//               <td>
-//                 {order.products.map(product => (
-//                   <div key={product.name} className="product-info">
-//                     {product.name} ({product.quantity})
-//                   </div>
-//                 ))}
-//               </td>
-//               <td>
-//                 {order.products.reduce((total, product) => total + product.quantity, 0)}
-//               </td>
-//               <td>₹{order.totalPrice.toFixed(2)}</td>
-//               <td>{order.paymentType}</td>
-//               <td>
-//                 <span className={`status ${order.status.toLowerCase()}`}>
-//                   {order.status}
-//                 </span>
-//               </td>
-//               <td>
-//                 <Link to={`/orders/${order.id}`} className="details-link">
-//                   View Details
-//                 </Link>
-//               </td>
-//             </tr>
-//           ))}
-//         </tbody>
-//       </table>
-//     </div>
-//   );
-// }
-
-// export default OrdersPage;
-
-
-import React, { useContext, useEffect } from 'react';
-import { CartContext } from '../context/CartContext';
-import { Link } from 'react-router-dom';
+import { UserContext } from '../context/UserContext';
+import { Link, useNavigate } from 'react-router-dom';
 import './OrdersPage.css'; // Make sure the CSS file is imported
+import axios from 'axios';
+
 
 function OrdersPage() {
-  const { orders } = useContext(CartContext);
+  const [orders, setOrders] = useState([]);
+  const { userId } = useContext(UserContext);
+  const [loading, setLoading] = useState(true);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
-    console.log('Orders:', orders);
-    if (orders.length > 0) {
-      console.log('First Order:', orders[0]);
-      console.log('Products in First Order:', orders[0].products);
+    const getOrders = async () => {
+      setLoading(true);
+      const token = localStorage.getItem('token');
+      if (!token) {
+        navigate('/login');
+      }
+      // console.log(userId);
+      try {
+        const url = `http://localhost:5120/api/Order/${userId}`;
+
+        const response = await axios.get(url, {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        });
+        setOrders(response.data.$values);
+      }
+      catch (error) {
+        if (error.status === 401) {
+          alert("Your token expired or you are not authorized for this page");
+          localStorage.removeItem('token');
+          navigate('/login');
+        }
+        else if (error.code == "ERR_NETWORK") {
+          alert(error.message);
+          localStorage.removeItem('token');
+          navigate('/login');
+          console.log(error.message);
+        }
+        console.error('Error fetching products', error);
+      }
+    }
+    getOrders();
+  }, [userId]);
+
+
+  useEffect(() => {
+    if (orders.length != 0) {
+      setLoading(false);
+    }
+    else {
+      // console.log("empty order");
     }
   }, [orders]);
+
 
   if (!orders || orders.length === 0) {
     return (
@@ -120,49 +75,54 @@ function OrdersPage() {
     <div className="background">
       <div className="order-page">
         <h2 className="page-title">Order History</h2>
-
-        <table className="orders-table">
-          <thead>
-            <tr>
-              <th>Order ID</th>
-              <th>Products</th>
-              <th>Quantity</th>
-              <th>Total Price</th>
-              <th>Payment Method</th>
-              <th>Status</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            {orders.map(order => (
-              <tr key={order.id}>
-                <td>{order.id}</td>
-                <td>
-                  {order.products.map(product => (
-                    <div key={product.name} className="product-info">
-                      {product.name} ({product.quantity})
-                    </div>
-                  ))}
-                </td>
-                <td>
-                  {order.products.reduce((total, product) => total + product.quantity, 0)}
-                </td>
-                <td>₹{order.totalPrice.toFixed(2)}</td>
-                <td>{order.paymentType}</td>
-                <td>
-                  <span className={`status ${order.status.toLowerCase()}`}>
-                    {order.status}
-                  </span>
-                </td>
-                <td>
-                  <Link to={`/orders/${order.id}`} className="details-link">
-                    View Details
-                  </Link>
-                </td>
+        {loading ? (
+          <div className="loading-screen">Loading...</div>
+        ) : (
+          <table className="orders-table">
+            <thead>
+              <tr>
+                <th>Order ID</th>
+                <th>Products</th>
+                <th>Total Quantity</th>
+                <th>Total Price</th>
+                <th>Payment Method</th>
+                <th>Status</th>
+                <th>View PDF</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {orders.map(order => (
+                <tr key={order.$id}>
+                  <td>{order.orderId}
+                    {order.orderDate}
+                  </td>
+                  <td>
+                    {order.orderItems.$values.map(orderItem => (
+                      <div key={orderItem.$id} className="product-info">
+                        {orderItem.name} ({orderItem.quantity})
+                      </div>
+                    ))}
+                  </td>
+                  <td>
+                    {order.orderItems.$values.reduce((total, product) => total + product.quantity, 0)}
+                  </td>
+                  <td>₹{order.totalAmount.toFixed(2)}</td>
+                  <td>{order.payments.$values[0].paymentMethod}</td>
+                  <td>
+                    <span className={`status ${order.status.toLowerCase()}`}>
+                      {order.status}
+                    </span>
+                  </td>
+                  <td>
+                    <Link to={`/orders/${order.id}`} className="details-link">
+                      View Details
+                    </Link>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        )}
       </div>
     </div>
   );

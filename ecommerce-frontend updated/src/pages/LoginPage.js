@@ -7,7 +7,7 @@ import googleIcon from '../assets/images/google-icon.svg'; // Ensure this path i
 import './LoginPage.css'; // Import the updated CSS file
 
 const LoginPage = () => {
-  const { userId, setUserId } = useContext(UserContext);
+  const { userId, setUserId, setCartId, setWishlistId } = useContext(UserContext);
   const [email, setEmail] = useState('john.doe@example.com');
   const [password, setPassword] = useState('john.doe@example.com');
   const [showForgotPassword, setShowForgotPassword] = useState(false);
@@ -20,6 +20,9 @@ const LoginPage = () => {
 
 
   const handleSubmit = async (e) => {
+    setUserId(null);
+    setCartId(null);
+    setWishlistId(null);
     e.preventDefault();
     setLoading(true);
     setError('');
@@ -193,7 +196,7 @@ const LoginPage = () => {
         <div className="signupSection">
           <p>
             Don't have an account?{' '}
-            <a href="/signup" className="signupLink">
+            <a href="/register" className="signupLink">
               Sign Up
             </a>
           </p>

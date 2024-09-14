@@ -114,6 +114,14 @@ function RegisterPage() {
         <button type="submit" className="submitButton" disabled={loading}>
           {loading ? 'Registering...' : 'Register'}
         </button>
+        <div className="signupSection">
+          <p>
+            Already have an account?{' '}
+            <a href="/login" className="signupLink">
+              Log in
+            </a>
+          </p>
+        </div>
       </form>
       {/* ) : (
         <form className="form otpForm" onSubmit={handleOtpVerify}>

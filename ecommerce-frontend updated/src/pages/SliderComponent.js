@@ -34,15 +34,15 @@ function SliderComponent() {
     <div className="slider-container">
       <Slider {...settings}>
         {categories.map((category, index) => (
-          <div 
-            key={index} 
+          <div
+            key={index}
             className="slider-item"
-            onClick={() => navigate(category.path)}
+          // onClick={() => navigate(category.path)}
           >
             <img src={category.imgSrc} alt={category.name} />
             <div className="slider-overlay">
               <h3>{category.name}</h3>
-              <a href={category.path} className="slider-button">Shop Now</a>
+              {/* <a href={category.path} className="slider-button">Shop Now</a> */}
             </div>
           </div>
         ))}

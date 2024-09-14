@@ -41,7 +41,7 @@ function UserPage() {
           'Content-Type': 'application/json'
         }
       }); alert('User details updated successfully');
-      navigate('/profile');
+      navigate('/user');
     } catch (error) {
       alert('Error updating user details');
       if (error.response.status === 401) {
