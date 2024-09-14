@@ -1,0 +1,566 @@
+/* ElectronicsPage.css */
+
+/* .electronics-page {
+    background: linear-gradient(to right, #36d1dc, #5b86e5);
+    min-height: 100vh;
+    padding: 20px;
+    color: #fff;
+    font-family: Arial, sans-serif;
+  }
+  
+  .page-title {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .product-details {
+    margin-bottom: 40px;
+  }
+  
+  .back-button {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1em;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
+  
+  .product-details h3 {
+    font-size: 2em;
+    margin-bottom: 10px;
+  }
+  
+  .product-details p.price {
+    font-size: 1.5em;
+    color: #ff5722;
+    font-weight: bold;
+  }
+  
+  .product-details .original-price {
+    font-size: 0.9em;
+    text-decoration: line-through;
+    color: #757575;
+  }
+  
+  .grid-style {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+    padding: 20px;
+    margin: 0 auto;
+  }
+  
+  .product-card-style {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    padding: 15px;
+    text-align: center;
+    color: #333;
+  }
+  
+  .product-card-style:hover {
+    transform: scale(1.02);
+  }
+  
+  .product-image-style {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+  }
+  
+  .product-card-style:hover .product-image-style {
+    transform: scale(1.05);
+  }
+  
+  .rating-stars-style,
+  .review-stars-style {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .review-item {
+    margin-bottom: 20px;
+  }
+  
+  .add-review-section {
+    margin-top: 20px;
+  }
+  
+  .review-textarea {
+    width: 100%;
+    height: 120px;
+    padding: 12px;
+    border: 1px solid #dcdcdc;
+    border-radius: 8px;
+    font-size: 1em;
+    margin-bottom: 10px;
+    resize: none;
+  }
+  
+  .submit-review-button {
+    background-color: #36d1dc;
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 10px;
+    transition: background 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+  }
+  
+  .buy-button {
+    background-color: #5b86e5;
+  }
+  
+  .cart-button,
+  .buy-button {
+    background-color: #36d1dc;
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 10px;
+    transition: background 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+  }
+  
+  .cart-button .icon,
+  .buy-button .icon {
+    margin-right: 8px;
+  }
+   */
+
+   /* modified */
+/* ElectronicsPage.css */
+
+ /* .electronics-page {
+  padding: 20px;
+  background-color: #f9f9f9;
+} */
+
+
+.icon-image-container {
+  position: relative;
+  display: inline-block;
+}
+
+.share-icon {
+  position: absolute;
+  top: 10px; /* Adjusted for spacing from the top */
+  left: 10px; /* Adjusted for spacing from the left */
+  font-size: 36px; /* Increased size for better visibility */
+  color: #333;
+  cursor: pointer;
+  transition: color 0.3s, transform 0.3s, text-shadow 0.3s; /* Added text-shadow transition */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+.share-icon:hover {
+  color: #007bff;
+  transform: scale(1.2); /* Larger scale on hover */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Darker shadow on hover */
+}
+
+.image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.wishlist-icon {
+  font-size: 36px; /* Ensure consistency if used */
+  color: #333;
+  cursor: pointer;
+  transition: color 0.3s, transform 0.3s, text-shadow 0.3s;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.wishlist-icon:hover {
+  color: #007bff;
+  transform: scale(1.2);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.icon-container {
+  display: flex;
+  align-items: center;
+}
+
+.icon-container .share-icon {
+  margin-right: 20px; /* Increased space between icons */
+}
+
+
+.product-image-container {
+  position: relative;
+  width: 100%;
+  max-width: 600px; /* Adjust as needed */
+}
+
+.icons-container {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: flex;
+  align-items: center;
+  z-index: 10; /* Ensure icons are above the image */
+}
+
+.share-icon,
+.wishlist-icon {
+  font-size: 24px; /* Adjust as needed */
+  color: #333; /* Adjust as needed */
+  cursor: pointer;
+}
+
+.share-icon {
+  margin-right: 10px; /* Space between share and heart icons */
+}
+
+.product-image-large {
+  width: 100%;
+  height: auto;
+  display: block; /* Ensure image is block to avoid whitespace issues */
+}
+
+.product-actions {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.action-button {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.cart-button {
+  background-color: #f5f5f5;
+}
+
+.buy-button {
+  background-color: #e0e0e0;
+}
+
+.icon {
+  margin-right: 8px;
+}
+
+
+
+
+.electronics-page {
+  padding: 20px;
+  background: linear-gradient(to left, #a2c2e0, #d0e6f1); /* Light blue gradient */
+}
+
+
+
+.page-title {
+  text-align: center;
+  font-size: 2em;
+  color: #333;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.product-details {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Back Button Style */
+.back-button {
+  background: linear-gradient(90deg, #0c43e8, #1a06d0); /* Gradient background */
+  border: 2px solid transparent;
+  color: white; /* Make the text white */
+  font-size: 16px;
+  cursor: pointer;
+  padding: 10px 20px; /* Add padding for larger button */
+  border-radius: 8px; /* Rounded corners */
+  margin-right: auto; /* Align to the left inside a flexbox container */
+  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s; /* Smooth transition */
+}
+
+.back-button:hover {
+  background: linear-gradient(90deg, #1a06d0, #0c43e8); /* Reverse gradient on hover */
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Add shadow for a more pronounced hover effect */
+}
+
+/* Ensure the parent container uses flexbox to align the button */
+.button-container {
+  display: flex;
+  align-items: center; /* Center the items vertically */
+  margin-bottom: 20px; /* Space below the row */
+}
+
+
+
+.product-detail-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.product-image-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.product-image-large {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-actions {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.action-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.cart-button {
+  background: linear-gradient(135deg, #ffd59e, #ffa726); /* Light orange gradient */
+  color: white;
+  padding: 20px 40px; /* Larger button */
+  border: none;
+  border-radius: 50px;
+  font-size: 20px; /* Increased font size */
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 8px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.cart-button:hover {
+  transform: translateY(-5px);
+  background: linear-gradient(135deg, #ffe0b2, #ff9800); /* Darker on hover */
+  box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
+}
+
+.buy-button {
+  background: linear-gradient(135deg, #ff7043, #f4511e); /* Dark orange gradient */
+  color: white;
+  padding: 20px 40px; /* Larger button */
+  border: none;
+  border-radius: 50px;
+  font-size: 20px; /* Increased font size */
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 8px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.buy-button:hover {
+  transform: translateY(-5px);
+  background: linear-gradient(135deg, #ff8a65, #e64a19); /* Darker on hover */
+  box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
+}
+
+
+
+.action-button:hover {
+  transform: translateY(-2px);
+}
+
+.cart-button:hover {
+  background-color: #e85c50;
+}
+
+.buy-button:hover {
+  background-color: #45a049;
+}
+
+
+
+
+.wishlist-icon {
+  position: absolute; /* Position the icon absolutely within the container */
+  top: 10px; /* Adjust the top position */
+  right: 10px; /* Move the icon to the right edge of the container */
+  font-size: 28px;
+  cursor: pointer;
+  color: #ff6f61;
+}
+
+
+.wishlist-icon.added {
+  color: red;
+}
+
+.product-info {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-info h3 {
+  margin-top: 0;
+  color: #333;
+}
+
+.price {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ff6f61;
+}
+
+.discount {
+  font-size: 18px;
+  color: #888;
+}
+
+.rating-stars-container {
+  display: flex;
+  justify-content: center; /* Horizontally center */
+  align-items: center; /* Vertically center */
+
+}
+
+.rating-stars-style {
+  display: flex;
+  align-items: center;
+}
+
+.rating-number {
+  margin-left: 10px;
+  font-size: 16px;
+}
+
+
+.reviews-section {
+  margin-top: 20px;
+  text-align: left; /* Aligns all text to the left */
+}
+
+.review-item {
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+}
+
+.add-review-section {
+  margin-top: 20px;
+}
+
+.add-review-section h4 {
+  margin: 0; /* Remove default margin */
+}
+
+.review-stars-style {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.review-stars-style label {
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.review-textarea {
+  width: 100%;
+  height: 100px;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  margin-top: 10px;
+  resize: none;
+  font-size: 16px;
+}
+
+.submit-review-button {
+  margin-top: 10px;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background-color: #4caf50;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.submit-review-button:hover {
+  background-color: #45a049;
+}
+
+
+.grid-style {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.product-card-style {
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  overflow: hidden;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+  background: white;
+}
+
+.product-card-style:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.product-image-style {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 1px solid #ddd;
+}
+
+.wishlist-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.icon {
+  margin-right: 8px;
+} 

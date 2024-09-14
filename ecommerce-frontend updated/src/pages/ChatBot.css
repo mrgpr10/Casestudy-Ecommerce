@@ -1,0 +1,315 @@
+/* General Styles */
+
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+/* Form Container Styles */
+.form-container {
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    margin-top: 15px;
+}
+
+.form-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Input Styles */
+.form-container input {
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
+
+.form-container input:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+/* Submit Button Styles */
+.form-submit-button {
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #007BFF, #0056b3);
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+    font-size: 14px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-submit-button:hover {
+    background: linear-gradient(135deg, #0056b3, #003d7a);
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* User Profile Form Styles */
+.user-profile-form {
+    /* Add any additional styles specific to the User Profile form here if needed */
+}
+
+/* Update Address Form Styles */
+.update-address-form {
+    /* Add any additional styles specific to the Update Address form here if needed */
+}
+
+/* Register Form Styles */
+.register-form {
+    /* Add any additional styles specific to the Register form here if needed */
+}
+
+/* My Orders Styles */
+.orders-container {
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    margin-top: 15px;
+}
+
+.order-details {
+    padding: 15px;
+    border-bottom: 1px solid #e0e0e0;
+    margin-bottom: 10px;
+}
+
+.order-details:last-child {
+    border-bottom: none;
+}
+
+.order-details p {
+    margin: 0;
+    font-size: 14px;
+    color: #333;
+}
+
+.order-details p:first-of-type {
+    font-weight: bold;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: #f0f2f5;
+    margin: 0;
+    padding: 0;
+}
+
+.chatbot-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 480px;
+    height: 650px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+    background: linear-gradient(135deg, #ffffff, #e0eaff);
+    margin: 20px auto;
+}
+
+.chat-header {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background: linear-gradient(135deg, #007BFF, #0056b3);
+    color: white;
+    border-bottom: 2px solid #003d7a;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.avatar img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+    border: 4px solid #ffffff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.chat-info h2 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.chat-info p {
+    margin: 0;
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+.chat-window {
+    flex-grow: 1;
+    padding: 15px;
+    overflow-y: auto;
+    background: #ffffff;
+    border-top: 2px solid #e0e0e0;
+    box-shadow: inset 0 1px 8px rgba(0, 0, 0, 0.05);
+}
+
+.chat-message {
+    margin-bottom: 12px;
+    padding: 12px;
+    border-radius: 20px;
+    max-width: 85%;
+    word-wrap: break-word;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.chat-message.bot {
+    background: #e0f7fa;
+    align-self: flex-start;
+    animation: slideInLeft 0.6s ease-out;
+}
+
+.chat-message.user {
+    background: #e8eaf6;
+    align-self: flex-end;
+    animation: slideInRight 0.6s ease-out;
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.chat-input-container {
+    display: flex;
+    padding: 15px;
+    background: #fafafa;
+    border-top: 2px solid #e0e0e0;
+    box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.chat-input {
+    flex-grow: 1;
+    padding: 12px;
+    border-radius: 25px;
+    border: 1px solid #ddd;
+    outline: none;
+    font-size: 14px;
+    box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.send-button {
+    padding: 12px 20px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 25px;
+    background: linear-gradient(135deg, #28a745, #218838);
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+    font-size: 14px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.send-button:hover {
+    background: linear-gradient(135deg, #218838, #1e7e34);
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.options-container, .categories-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.option-button, .category-button {
+    padding: 12px 18px;
+    border: none;
+    border-radius: 25px;
+    background: linear-gradient(135deg, #007BFF, #0056b3);
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+    font-size: 14px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.option-button:hover, .category-button:hover {
+    background: linear-gradient(135deg, #0056b3, #003d7a);
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.dropdown-container {
+    position: relative;
+}
+
+.dropdown-button {
+    background: linear-gradient(135deg, #f9f9f9, #e0e0e0);
+    border: none;
+    padding: 12px;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    border-radius: 25px;
+    transition: background 0.3s;
+}
+
+.dropdown-button:hover {
+    background: linear-gradient(135deg, #e0e0e0, #d0d0d0);
+}
+
+.dropdown-menu {
+    display: block;
+    position: absolute;
+    background: #ffffff;
+    border: 1px solid #ddd;
+    width: 100%;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    border-radius: 20px;
+    margin-top: 5px;
+}
+
+.dropdown-item {
+    display: block;
+    padding: 12px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    transition: background 0.3s;
+}
+
+.dropdown-item:hover {
+    background: #f5f5f5;
+}

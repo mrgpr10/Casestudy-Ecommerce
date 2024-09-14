@@ -1,0 +1,266 @@
+/* OrdersPage.css */
+/* 
+.orders-container {
+    padding: 30px;
+    background-color: #f4f7f6;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    margin: 20px auto;
+  }
+  
+  .page-title {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+    font-weight: 600;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .no-orders-message {
+    font-size: 18px;
+    color: #666;
+    text-align: center;
+  }
+  
+  .orders-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .orders-table th, .orders-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .orders-table th {
+    background-color: #f5f5f5;
+    color: #333;
+    font-weight: 500;
+  }
+  
+  .orders-table tr:nth-child(even) {
+    background-color: #fafafa;
+  }
+  
+  .orders-table tr:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .product-info {
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .status {
+    font-weight: 500;
+    padding: 6px 12px;
+    border-radius: 4px;
+    text-transform: capitalize;
+  }
+  
+  .status.pending {
+    color: #ff9800;
+    background-color: #fff3e0;
+  }
+  
+  .status.completed {
+    color: #4caf50;
+    background-color: #e8f5e9;
+  }
+  
+  .status.cancelled {
+    color: #f44336;
+    background-color: #ffebee;
+  }
+  
+  .details-link {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 500;
+    border-bottom: 1px solid #007bff;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+  }
+  
+  .details-link:hover {
+    color: #0056b3;
+    border-bottom: 1px solid #0056b3;
+  }
+   */
+
+   /* Global Styles */
+ /* Global Styles */
+
+
+ /* 1  /
+
+
+ /* Global Styles */
+/* Scope styles to the order page */
+
+/* Scope styles to the order page */
+
+ 
+/* General Styling */
+
+.background{
+  background: linear-gradient(to right, #a8c0ff, #3f2b96);
+
+}
+
+.order-page body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to right, #a8c0ff, #3f2b96); /* Gradient background */
+  color: #333;
+}
+
+/* Container for the Orders Page */
+.order-page .orders-container {
+  background: #fff;
+  padding: 40px;
+  border-radius: 25px; /* Rounded corners for the container */
+  max-width: 900px;
+  width: 100%;
+  margin: 40px auto; /* Centered container with margin */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15); /* Softer shadow for a more subtle depth */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.order-page .orders-container:hover {
+  transform: translateY(-8px); /* Slight lift on hover */
+  box-shadow: 0 20px 36px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+  background-color: #f5f5f5; /* Light background change on hover */
+}
+
+/* Page Title */
+.order-page .page-title {
+  font-size: 40px; /* Larger title for better visibility */
+  text-align: left;
+  color: #333; /* Darker color for better readability */
+  margin-bottom: 20px; /* Reduced margin for a more compact look */
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.order-page .page-title:hover {
+  color: #3f2b96; /* Change color on hover */
+  transform: translateX(4px); /* Subtle horizontal shift on hover */
+}
+
+/* No Orders Message */
+.order-page .no-orders-message {
+  text-align: center;
+  font-size: 22px; /* Slightly larger text for emphasis */
+  color: #777; /* Softer gray */
+  font-style: italic; /* Italicize for a softer look */
+  margin-top: 20px;
+}
+
+/* Orders Table */
+.order-page .orders-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 8px; /* Space between rows */
+  margin-top: 20px;
+  padding: 16px; /* Ensure padding for the table itself */
+}
+
+.order-page .orders-table th, .order-page .orders-table td {
+  padding: 16px;
+  text-align: left;
+  font-size: 16px;
+  color: #555;
+  background-color: #fff;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+  /* Removed border-radius to keep sharp corners */
+}
+
+.order-page .orders-table th {
+  background-color: #f8f8f8; /* Light gray header background */
+  font-weight: 600;
+}
+
+.order-page .orders-table tr:hover td {
+  background-color: #f9f9f9; /* Highlight row on hover */
+  box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.1); /* Inner shadow for depth */
+}
+
+/* Product Info inside the table */
+.order-page .product-info {
+  margin-bottom: 10px;
+  font-weight: 500;
+  color: #333;
+}
+
+/* Status Styling */
+.order-page .status {
+  padding: 8px 16px; /* More padding for better touch targets */
+  border-radius: 30px; /* Very rounded corners */
+  color: #fff;
+  font-weight: 600;
+  text-align: center;
+  background: linear-gradient(to right, #ff7e5f, #feb47b); /* Softer gradient color for status */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.order-page .status:hover {
+  background: linear-gradient(to right, #feb47b, #ff7e5f); /* Reverse gradient on hover */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+}
+
+/* View Details Link */
+.order-page .details-link {
+  text-decoration: none;
+  color: #fff;
+  padding: 12px 24px; /* Larger padding for better touch targets */
+  border-radius: 30px; /* More rounded corners */
+  background: linear-gradient(to right, #ff7e5f, #feb47b); /* Softer gradient color for actions */
+  font-weight: 600;
+  display: inline-block; /* Ensure the link fits its content */
+  transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.order-page .details-link:hover {
+  background: linear-gradient(to left, #ff7e5f, #feb47b); /* Reverse gradient on hover */
+  box-shadow: 0 4px 8px rgba(255, 94, 98, 0.2); /* Soft shadow on hover */
+  transform: scale(1.05); /* Slight scale effect on hover */
+}
+
+/* Table Responsiveness */
+.order-page @media (max-width: 768px) {
+  .order-page .orders-table th, .order-page .orders-table td {
+    padding: 14px;
+    font-size: 14px;
+  }
+
+  .order-page .page-title {
+    font-size: 36px;
+  }
+}
+
+/* Extra responsiveness for mobile screens */
+.order-page @media (max-width: 500px) {
+  .order-page .orders-container {
+    padding: 16px;
+    width: 100%;
+  }
+
+  .order-page .page-title {
+    font-size: 32px;
+  }
+
+  .order-page .orders-table th, .order-page .orders-table td {
+    font-size: 12px;
+  }
+}

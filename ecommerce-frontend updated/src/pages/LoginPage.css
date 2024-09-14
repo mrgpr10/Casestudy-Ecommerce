@@ -1,0 +1,191 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&family=Roboto:wght@400;500;700&display=swap');
+
+/* Main container for the form */
+.formContainer {
+  font-family: 'Roboto', sans-serif; /* Use Roboto for general text */
+  /* other existing styles */
+}
+
+/* Google Sign-In button styling */
+.googleButton {
+  font-family: 'Poppins', sans-serif; /* Use Poppins for the Google Button */
+  font-size: 18px; /* Increase the font size for better visibility */
+  font-weight: 600; /* Make the text bold for better impact */
+  width: 100%; /* Match width with input fields */
+  padding: 12px; /* Set consistent padding */
+  background-color: #27408B; /* Darker royal blue */
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.googleButton:hover {
+  background-color: #1e3475; /* Even darker royal blue on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Main container for the form */
+.formContainer {
+  width: 100%;
+  max-width: 400px;
+  padding: 30px;
+  background: #ffffff; /* Set container background to white */
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.formContainer:hover {
+  transform: translateY(-5px);
+}
+
+/* Google Sign-In button styling */
+.googleButton {
+  width: 100%; /* Match width with input fields */
+  padding: 12px; /* Set consistent padding */
+  background-color: #4169E1; /* Use royal blue */
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  font-size: 16px;
+  font-weight: 500;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.googleButton:hover {
+  background-color: #0039cb;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Google icon inside the button */
+.googleIcon {
+  width: 24px;
+  margin-right: 10px;
+}
+
+/* Styling for the "or" section */
+.orSection {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.orLine {
+  flex: 1;
+  height: 1px;
+  background-color: #ddd;
+}
+
+.orText {
+  margin: 0 15px;
+  color: #333;
+  font-weight: 600;
+}
+
+/* Styling for form sections */
+.formWrapper {
+  margin-bottom: 20px;
+}
+
+.welcomeText {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Styling for input groups */
+.inputGroup {
+  margin-bottom: 20px;
+  text-align: left; /* Align labels to the left */
+}
+
+.label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #555;
+}
+
+.input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+  font-size: 16px;
+  background: #ffffff;
+  transition: border-color 0.3s;
+}
+
+.input:focus {
+  border-color: #4169E1; /* Royal blue border on focus */
+  outline: none;
+}
+
+/* General button styling */
+.button {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  background-color: #4169E1; /* Royal blue background */
+  color: #ffffff;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  font-weight: 600;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.button:hover {
+  background-color: #0039cb; /* Darker royal blue on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Styling for "Forgot Password?" and "Back to Login" buttons */
+.forgotPasswordButton,
+.backButton {
+  background-color: transparent;
+  color: #4169E1; /* Royal blue text */
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.forgotPasswordButton:hover,
+.backButton:hover {
+  color: #0039cb; /* Darker royal blue on hover */
+}
+
+/* Error message styling */
+.error {
+  color: red;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+/* Styling for the sign-up section */
+.signupSection {
+  margin-top: 20px;
+}
+
+.signupLink {
+  color: #4169E1; /* Royal blue for Sign Up */
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.signupLink:hover {
+  text-decoration: underline;
+}

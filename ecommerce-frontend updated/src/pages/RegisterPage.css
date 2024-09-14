@@ -1,0 +1,146 @@
+/* Overall container styling */
+/* Enhanced overall container styling */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(to right, #5b86e5, #36d1dc); /* Smooth gradient */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 20px;
+  box-sizing: border-box;
+  transition: background 0.5s ease; /* Smooth transition effect */
+}
+
+/* Add subtle box shadow and border-radius for a polished look */
+.container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.1); /* Slight overlay for depth */
+  border-radius: 16px; /* Rounded corners */
+  z-index: -1; /* Place it behind the content */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  transition: box-shadow 0.5s ease; /* Smooth shadow transition */
+}
+
+/* Add a hover effect to enhance the smoothness */
+.container:hover::before {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Deeper shadow on hover */
+}
+
+
+/* Title styling with gradient text and shadow */
+.title {
+  font-size: 36px;
+  font-weight: 700;
+  background: linear-gradient(to right, #ffffff, #f1f1f1); /* Subtle gradient text */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 30px;
+  font-family: 'Roboto', sans-serif; /* Different font for the title */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Added text shadow */
+}
+
+/* Error and success message styling with rounded corners */
+.error {
+  color: #d9534f;
+  font-size: 14px;
+  margin-bottom: 15px;
+  border: 1px solid #d9534f;
+  padding: 10px;
+  border-radius: 8px; /* Added rounded corners */
+  background-color: #f8d7da; /* Light background color */
+}
+
+.success {
+  color: #5bc0de;
+  font-size: 14px;
+  margin-bottom: 15px;
+  border: 1px solid #5bc0de;
+  padding: 10px;
+  border-radius: 8px; /* Added rounded corners */
+  background-color: #d1ecf1; /* Light background color */
+}
+
+/* Form container styling with gradient border and shadow */
+.form, .otpForm {
+  background: #fff;
+  border-radius: 16px;
+  padding: 40px;
+  width: 100%;
+  max-width: 450px;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3); /* Enhanced shadow effect */
+  border: 2px solid #eee; /* Subtle border */
+  border-image: linear-gradient(to right, #5767e6, #4441e9); /* Gradient border */
+  border-image-slice: 1; /* Ensures border image is displayed correctly */
+}
+
+/* Input field styling with subtle shadow and smooth transition */
+.input {
+  width: calc(100% - 24px); /* Adjust width for padding */
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  color: #333;
+  font-size: 16px;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /* Added subtle inner shadow */
+}
+
+.input:focus {
+  border-color: #6e45e2;
+  outline: none;
+  box-shadow: 0 0 8px rgba(110, 69, 226, 0.3); /* Enhanced shadow on focus */
+}
+
+/* Button styling with gradient background and smoother hover effect */
+.submitButton {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  background: linear-gradient(to right, #5353f4, #5876d9); /* Gradient background */
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  margin-top: 10px;
+}
+
+.submitButton:hover {
+  background: linear-gradient(to right, #0e02ea, #0e02ea); /* Darker gradient on hover */
+  transform: scale(1.02); /* Slight zoom effect */
+}
+
+/* OTP instruction styling with improved spacing */
+.otpInstruction {
+  margin-bottom: 20px;
+  font-size: 16px;
+  color: #333;
+  line-height: 1.5; /* Improved line spacing */
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .container {
+    width: 90%;
+    padding: 10px;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+
+  .input, .submitButton {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
